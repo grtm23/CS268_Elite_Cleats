@@ -1,64 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Products – Elite Cleats</title>
-  <link rel="stylesheet" href="../assets/css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products – Elite Cleats</title>
+
+    <!-- Global Styles -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+    <!-- Shared Components -->
+    <link rel="stylesheet" href="../assets/css/navbar.css">
+    <link rel="stylesheet" href="../assets/css/footer.css">
+
+    <!-- Page-Specific Styles -->
+    <link rel="stylesheet" href="../assets/css/product.css">
 </head>
 <body>
 
-  <!-- Navbar injected here -->
-  <div id="navbar"></div>
+    <!-- Navbar injected here -->
+    <div id="navbar"></div>
 
-  <main class="products-page">
-    <section class="product-header">
-        <h1>Football Cleats</h1>
-        <div class="sort-menu">
-          <label for="sort-options">Order by:</label>
-          <select id="sort-options">
-            <option value="default">Default</option>
-            <option value="price-low-high">Price: Low to High</option>
-            <option value="price-high-low">Price: High to Low</option>
-            <option value="name-a-z">Name: A–Z</option>
-            <option value="name-z-a">Name: Z–A</option>
-          </select>
-        </div>
-      </section>
+    <main class="products-page">
+        <section class="product-header">
+            <h1>Football Cleats</h1>
+            <div class="sort-menu">
+                <label for="sort-options">Order by:</label>
+                <select id="sort-options">
+                    <option value="default">Default</option>
+                    <option value="price-low-high">Price: Low to High</option>
+                    <option value="price-high-low">Price: High to Low</option>
+                    <option value="name-a-z">Name: A–Z</option>
+                    <option value="name-z-a">Name: Z–A</option>
+                </select>
+            </div>
+        </section>
 
-    <section class="product-grid">
-      <div class="product-card">
-        <div class="product-image">
-            <img class="primary-img" src="..\assets\img\products\bota-adidas-predator-elite-ft-fg-black-white-red-1.webp" alt="Main view">
-            <img class="secondary-img" src="..\assets\img\products\bota-adidas-predator-elite-ft-fg-black-white-red-5.webp" alt="Side view">
-        </div>
-        <h3>Predator Elite FT FG Boots</h3>
-        <p class="price">279.99 €</p>
-      </div>
+        <section class="product-grid">
+            <a href="../pages/product-details.html" class="product-link">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img class="primary-img" src="../assets/img/products/bota-adidas-predator-elite-ft-fg-black-white-red-1.webp" alt="Main view">
+                        <img class="secondary-img" src="../assets/img/products/bota-adidas-predator-elite-ft-fg-black-white-red-5.webp" alt="Side view">
+                    </div>
+                    <h3>Predator Elite FT FG Boots</h3>
+                    <p class="price">279.99 €</p>
+                </div>
+            </a>
 
-      <div class="product-card">
-        <div class="product-image">
-            <img class="primary-img" src="../assets\img\products\bota-adidas-f50-elite-ll-ag-white-core-black-solar-yellow-1.webp" alt="Main view">
-            <img class="secondary-img" src="../assets\img\products\bota-adidas-f50-elite-ll-ag-white-core-black-solar-yellow-5.webp" alt="Side view">
-        </div>
-        <h3>F50 Elite LL AG Football boots</h3>
-        <p class="price">269.99 €</p>
-      </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <img class="primary-img" src="../assets/img/products/bota-adidas-f50-elite-ll-ag-white-core-black-solar-yellow-1.webp" alt="Main view">
+                    <img class="secondary-img" src="../assets/img/products/bota-adidas-f50-elite-ll-ag-white-core-black-solar-yellow-5.webp" alt="Side view">
+                </div>
+                <h3>F50 Elite LL AG Football boots</h3>
+                <p class="price">269.99 €</p>
+            </div>
 
-      <div class="product-card">
-        <div class="product-image">
-            <img class="primary-img" src="../assets\img\products\bota-puma-future-8-ultimate-ag-white-silver-mist-cool-light-gray-1.webp" alt="Main view">
-            <img class="secondary-img" src="../assets\img\products\bota-puma-future-8-ultimate-ag-white-silver-mist-cool-light-gray-5.webp" alt="Side view">
-        </div>
-        <h3>Future 8 Ultimate AG Football Boots</h3>
-        <p class="price"><span class="old-price">229.99 €</span> <strong>189.99 €</strong> <span class="discount">–17%</span></p>
-      </div>
-    </section>
-  </main>
+            <div class="product-card">
+                <div class="product-image">
+                    <img class="primary-img" src="../assets/img/products/bota-puma-future-8-ultimate-ag-white-silver-mist-cool-light-gray-1.webp" alt="Main view">
+                    <img class="secondary-img" src="../assets/img/products/bota-puma-future-8-ultimate-ag-white-silver-mist-cool-light-gray-5.webp" alt="Side view">
+                </div>
+                <h3>Future 8 Ultimate AG Football Boots</h3>
+                <p class="price"><span class="old-price">229.99 €</span> <strong>189.99 €</strong> <span class="discount">–17%</span></p>
+            </div>
+        </section>
+    </main>
 
-  <!-- Footer injected here -->
-  <div id="footer"></div>
+    <!-- Footer injected here -->
+    <div id="footer"></div>
 
-  <script src="../assets/js/script.js"></script>
+    <script src="../assets/js/script.js"></script>
 </body>
 </html>
