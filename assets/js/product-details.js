@@ -44,6 +44,17 @@ function closeCartPanel() {
   document.getElementById("cart-panel").classList.remove("visible");
 }
 
+document.querySelector(".remove-item-btn").addEventListener("click", function () {
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  // For now, just remove the last item added (you only have one product anyway)
+  cart.pop();
+
+  localStorage.setItem("cart", JSON.stringify(cart));
+
+  // Hide the panel
+  closeCartPanel();
+});
 
 
 
