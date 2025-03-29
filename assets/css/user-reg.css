@@ -1,1 +1,67 @@
+#user-reg-page
+{
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+
+}
+
+input
+{
+    background-color: rgb(255, 255, 255);
+    border: 2px solid gray;
+    padding: 10px;
+    width: 500px;
+    height: 40px;
+    font-size: 24px;
+
+}
+
+label
+{
+    font-size: x-large;
+}
+
+#signUpForm
+{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    width: 100%;
+    max-width: 600px;
+
+
+}
+
+.sidebox
+{
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 20px;
+
+}
+
+.sideitem
+{
+    display: flex;
+    flex-direction: column;    
+    padding-right: 20px;
+
+}
+
+.downbox
+{
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 20px;
+}
+
+.downitem
+{
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 20px;
+
+}
+
 
