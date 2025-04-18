@@ -1,0 +1,83 @@
+.checkout-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    max-width: 1200px;
+    margin: auto;
+    padding: 40px 20px;
+}
+  
+.checkout-left {
+    flex: 2;
+}
+  
+.checkout-left h1 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+  
+.checkout-left h2 {
+    font-size: 1.2rem;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+  
+.checkout-left label {
+    display: block;
+    font-size: 0.95rem;
+    margin-bottom: 5px;
+    margin-top: 15px;
+}
+  
+.checkout-left input[type="text"],
+.checkout-left input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+  
+.checkout-left input[type="radio"] {
+    margin-right: 8px;
+}
+  
+.checkout-summary {
+    flex: 1;
+    border: 1px solid #ddd;
+    padding: 20px;
+    height: fit-content;
+    background: #f9f9f9;
+}
+  
+.checkout-summary h2 {
+    margin-bottom: 20px;
+}
+  
+.summary-line {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+}
+  
+.summary-line.total {
+    font-weight: bold;
+    font-size: 1.1rem;
+    border-top: 1px solid #ccc;
+    padding-top: 10px;
+}
+  
+.confirm-btn {
+    margin-top: 20px;
+    padding: 12px;
+    width: 100%;
+    background: green;
+    color: white;
+    border: none;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+  

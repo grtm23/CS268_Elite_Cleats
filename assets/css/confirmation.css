@@ -1,0 +1,75 @@
+.confirmation-container {
+    max-width: 800px;
+    margin: auto;
+    padding: 40px 20px;
+}
+  
+.confirmation-box {
+    background: #f9f9f9;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+}
+  
+.confirmation-box h1 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: green;
+  }
+  
+.confirmation-box p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+  
+.confirmation-box h2 {
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+  
+#confirmation-items {
+    text-align: left;
+    margin-bottom: 20px;
+}
+  
+.confirmation-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+  
+.confirmation-item img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+  
+.confirmation-item-details {
+    flex: 1;
+}
+  
+.confirmation-item-details p {
+    margin: 4px 0;
+    font-size: 0.95rem;
+}
+  
+.confirmation-total {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-top: 20px;
+}
+  
+.shop-more-btn {
+    margin-top: 30px;
+    padding: 12px 20px;
+    background: orange;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    border-radius: 6px;
+}
+  

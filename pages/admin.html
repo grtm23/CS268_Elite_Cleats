@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Panel – Elite Cleats</title>
+
+    <!-- Global Styles -->
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <!-- Shared Components -->
+    <link rel="stylesheet" href="../assets/css/navbar.css" />
+    <link rel="stylesheet" href="../assets/css/footer.css" />
+    <!-- Page-Specific Styles -->
+    <link rel="stylesheet" href="../assets/css/admin.css" />
+</head>
+
+<body>
+    <div id="navbar"></div>
+
+    <main class="admin-container">
+        <aside class="admin-sidebar">
+        <h2>Admin Menu</h2>
+        <button onclick="showSection('admin-dashboard')">Dashboard</button>
+        <button onclick="showSection('admin-products')">Products</button>
+        <button onclick="showSection('admin-orders')">Orders</button>
+        <button onclick="showSection('admin-users')">Users</button>
+        </aside>
+
+        <section class="admin-content">
+
+        <!-- Dashboard Overview -->
+        <div id="admin-dashboard" class="admin-section">
+            <h1>Dashboard Overview</h1>
+            <div class="admin-cards">
+            <div class="admin-card" id="total-users">👤 Users: 0</div>
+            <div class="admin-card" id="total-products">👟 Products: 0</div>
+            <div class="admin-card" id="pending-orders">📦 Pending Orders: 0</div>
+            <div class="admin-card" id="low-stock">⚠️ Low Stock: 0 items</div>
+            </div>
+        </div>
+
+        <!-- Product Management -->
+        <div id="admin-products" class="admin-section" style="display:none">
+            <h1>Product Management</h1>
+            <button class="add-btn">+ Add Product</button>
+            <table class="admin-table">
+            <thead>
+                <tr>
+                <th>Image</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Stock</th>
+                <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="product-table-body">
+                <!-- Dynamically filled -->
+            </tbody>
+            </table>
+        </div>
+
+        <!-- Order Management -->
+        <div id="admin-orders" class="admin-section" style="display:none">
+            <h1>Order History</h1>
+            <table class="admin-table">
+            <thead>
+                <tr>
+                <th>Order ID</th>
+                <th>User</th>
+                <th>Total</th>
+                <th>Status</th>
+                <th>Date</th>
+                <th>View</th>
+                </tr>
+            </thead>
+            <tbody id="order-table-body">
+                <!-- Dynamically filled -->
+            </tbody>
+            </table>
+        </div>
+
+        <!-- User Management -->
+        <div id="admin-users" class="admin-section" style="display:none">
+            <h1>User Accounts</h1>
+            <table class="admin-table">
+            <thead>
+                <tr>
+                <th>Email</th>
+                <th>Role</th>
+                <th>Registered</th>
+                <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="user-table-body">
+                <!-- Dynamically filled -->
+            </tbody>
+            </table>
+        </div>
+
+        </section>
+    </main>
+
+    <div id="footer"></div>
+
+    <script src="../assets/js/script.js"></script>
+    <script>
+        function showSection(id) {
+        document.querySelectorAll('.admin-section').forEach(section => section.style.display = 'none');
+        document.getElementById(id).style.display = 'block';
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Checkout – Elite Cleats</title>
+
+  <!-- Global Styles -->
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <!-- Shared Components -->
+  <link rel="stylesheet" href="../assets/css/navbar.css" />
+  <link rel="stylesheet" href="../assets/css/footer.css" />
+  <!-- Page-Specific Styles -->
+  <link rel="stylesheet" href="../assets/css/checkout.css" />
+</head>
+<body>
+  <div id="navbar"></div>
+
+  <main class="checkout-container">
+    <!-- Left: Customer Info Form -->
+    <section class="checkout-left">
+      <h1>Shipping & Payment</h1>
+
+      <form id="checkout-form">
+        <h2>Customer Information</h2>
+        <label for="fullName">Full Name:</label>
+        <input type="text" id="fullName" name="fullName" required />
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required />
+
+        <h2>Shipping Address</h2>
+        <label for="address">Street Address:</label>
+        <input type="text" id="address" name="address" required />
+
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city" required />
+
+        <label for="zip">ZIP Code:</label>
+        <input type="text" id="zip" name="zip" required />
+
+        <h2>Payment Method</h2>
+        <label><input type="radio" name="payment" value="card" checked /> Credit/Debit Card</label>
+        <label><input type="radio" name="payment" value="paypal" /> PayPal</label>
+      </form>
+    </section>
+
+    <!-- Right: Order Summary -->
+    <aside class="checkout-summary">
+      <h2>Order Summary</h2>
+      <div class="summary-line">
+        <span>Total product price:</span>
+        <span id="summary-products">— €</span>
+      </div>
+      <div class="summary-line">
+        <span>Shipping:</span>
+        <span id="summary-shipping">15 €</span>
+      </div>
+      <div class="summary-line total">
+        <span>Total:</span>
+        <span id="summary-total">— €</span>
+      </div>
+      <button type="submit" class="confirm-btn" form="checkout-form">Confirm and Pay</button>
+    </aside>
+  </main>
+
+  <div id="footer"></div>
+
+  <!-- Scripts -->
+  <script src="../assets/js/script.js"></script>
+  <script src="../assets/js/checkout.js"></script>
+</body>
+</html>

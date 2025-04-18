@@ -1,94 +1,76 @@
-#user-reg-page
-{
-    padding: 20px;
-    max-width: 1200px;
+#user-reg-page {
+    padding: 40px 20px;
+    max-width: 800px;
     margin: auto;
-
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+ }
+  
+#user-reg-page h1 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 10px;
 }
-
-input
-{
-    background-color: rgb(255, 255, 255);
-    border: 2px solid gray;
+  
+#user-reg-page p {
+    text-align: center;
+    margin-bottom: 30px;
+}
+  
+#signUpForm {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+  
+.sidebox {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+  
+.sideitem,
+.downitem {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+  
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 0.95rem;
+}
+  
+input {
     padding: 10px;
-    width: 500px;
-    height: 40px;
-    font-size: 24px;
-
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
 }
-
-label
-{
-    font-size: x-large;
-}
-
-#signUpForm
-{
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-    width: 100%;
-    max-width: 600px;
-
-
-}
-
-.sidebox
-{
-    display: flex;
-    flex-direction: row;
-    padding-bottom: 20px;
-
-}
-
-.sideitem
-{
-    display: flex;
-    flex-direction: column;    
-    padding-right: 20px;
-
-}
-
-.downbox
-{
-    display: flex;
-    flex-direction: column;
-    padding-bottom: 20px;
-}
-
-.downitem
-{
-    display: flex;
-    flex-direction: column;
-    padding-bottom: 20px;
-
-}
-
-.submit_button
-{
-    display: flex;
-    justify-content: center;
-    padding: 0;
-    background-color: rgb(185, 0, 0);
+  
+.submit_button {
+    background-color: #1c1c1c;
     color: white;
-    height: 40px;
-    width: 80px;
-    font-size: 20px;
-    font-family:Arial, Helvetica, sans-serif;
-    border-radius: 2px;
-    
+    padding: 12px;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    width: 150px;
+    margin: auto;
+    cursor: pointer;
 }
-
-.submit_button:hover
-{
-    background-color: rgb(134, 2, 2);
+  
+.submit_button:hover {
+    background-color: #333;
 }
-
-.error
-{
+  
+.error {
     color: red;
-    font-size: 20px;
-    margin-left: 10px;
+    font-size: 0.85rem;
+    margin-top: 5px;
 }
-
+  
 

@@ -1,0 +1,92 @@
+.admin-container {
+    display: flex;
+    max-width: 1200px;
+    margin: auto;
+    padding: 40px 20px;
+    gap: 30px;
+}
+
+.admin-sidebar {
+    width: 200px;
+    background-color: #f1f1f1;
+    padding: 20px;
+    border-radius: 8px;
+    height: fit-content;
+}
+
+.admin-sidebar h2 {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.admin-sidebar button {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 0.95rem;
+    background-color: #1c1c1c;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.admin-sidebar button:hover {
+    background-color: #333;
+}
+
+.admin-content {
+    flex: 1;
+}
+
+.admin-section h1,
+.admin-section h2 {
+    margin-bottom: 20px;
+}
+
+.admin-cards {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.admin-card {
+    flex: 1;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.admin-table th,
+.admin-table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+}
+
+.admin-table th {
+    background-color: #f1f1f1;
+}
+
+.add-btn {
+    margin-bottom: 15px;
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.add-btn:hover {
+    background-color: #0056b3;
+}
