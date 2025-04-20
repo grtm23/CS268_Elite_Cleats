@@ -1,0 +1,46 @@
+#contact-page 
+{
+    padding: 40x 20px;
+    max-width: 1000px;
+    margin: auto;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    gap: 5px;
+
+}
+
+.text_title
+{
+    display: flex;
+    justify-content: left;
+    gap: 5px;
+    font-size: 22px;
+    padding: 10px;
+
+}
+
+.text_content
+{
+    display: flex;
+    justify-content: left;
+    font-size: 15px;
+    gap: 5px;
+    line-height: 1.8;
+    padding: 10px;
+
+}
+
+.contact_info
+{
+    font-size: 11px;
+
+}
+
+.seperator
+{
+    height: 2px;
+    background-color: grey;
+    margin: 50px 0;
+    width: 100%;
+}
