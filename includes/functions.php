@@ -143,6 +143,99 @@ function getProductImages(mysqli $conn, int $id): array
     if (!$imgs) $imgs[] = 'assets/img/placeholder.webp';
     return $imgs;
 }
+/* 
+ * Dashboard counts  (users, products, pending orders, low stock)
+ */
+function getDashboardStats(mysqli $conn): array
+{
+    // Users
+    $totalUsers = $conn->query("SELECT COUNT(*) AS c FROM Users")->fetch_assoc()['c'];
+
+    // Products
+    $totalProducts = $conn->query("SELECT COUNT(*) AS c FROM Products")->fetch_assoc()['c'];
+
+    // Pending orders
+    $pendingOrders = $conn->query("SELECT COUNT(*) AS c FROM Orders WHERE status='pending'")->fetch_assoc()['c'];
+
+    // Low-stock items (<=3 units)
+    $lowStock = $conn->query("SELECT COUNT(*) AS c FROM Products WHERE stock<=3")->fetch_assoc()['c'];
+
+    return [
+        'users'    => $totalUsers,
+        'products' => $totalProducts,
+        'pending'  => $pendingOrders,
+        'lowStock' => $lowStock
+    ];
+}
+
+/* 
+ * Full product list (+ first image) for admin table
+ */
+function fetchAllProducts(mysqli $conn): array
+{
+    $sql = "
+      SELECT p.product_id, p.name, p.price, p.stock,
+             (SELECT image_url
+              FROM Product_Images pi
+              WHERE pi.product_id = p.product_id
+              ORDER BY pi.image_id ASC
+              LIMIT 1) AS image_url
+      FROM Products p
+      ORDER BY p.product_id DESC";
+    return $conn->query($sql)->fetch_all(MYSQLI_ASSOC);
+}
+
+/*
+ * All orders with user email
+ */
+function fetchAllOrders(mysqli $conn): array
+{
+    $sql = "
+      SELECT o.order_id, u.email, o.total_amount, o.status, o.order_date
+      FROM Orders o
+      JOIN Users u ON u.user_id = o.user_id
+      ORDER BY o.order_date DESC";
+    return $conn->query($sql)->fetch_all(MYSQLI_ASSOC);
+}
+
+/* 
+ * All users list
+ */
+function fetchAllUsers(mysqli $conn): array
+{
+    $sql = "
+      SELECT email, role, created_at
+      FROM Users
+      ORDER BY created_at DESC";
+    return $conn->query($sql)->fetch_all(MYSQLI_ASSOC);
+}
+
+/*
+ * Insert user and return new user_id (or false on duplicate)
+ */
+function createUser(mysqli $conn, array $data)
+{
+    // Check duplicate email
+    $check = $conn->prepare("SELECT 1 FROM Users WHERE email = ?");
+    $check->bind_param('s', $data['email']);
+    $check->execute();
+    if ($check->get_result()->num_rows) return false; // email exists
+
+    $stmt = $conn->prepare("
+        INSERT INTO Users (first_name, last_name, email, phone_number, address, password_hash)
+        VALUES (?,?,?,?,?,?)
+    ");
+    $stmt->bind_param(
+        'ssssss',
+        $data['first_name'],
+        $data['last_name'],
+        $data['email'],
+        $data['phone'],
+        $data['address'],
+        password_hash($data['password'], PASSWORD_DEFAULT)
+    );
+    return $stmt->execute() ? $conn->insert_id : false;
+}
 
 ?>
 

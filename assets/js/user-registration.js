@@ -147,7 +147,7 @@ document.getElementById('signUpForm').addEventListener('submit', function(e) {
 
     if (valid) {
 
-        window.location.href = "products.html"
+        window.location.href = "products.php"
 
 
     }
