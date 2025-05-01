@@ -16,15 +16,17 @@ function handleAddToCart() {
   const selectedQuantity = parseInt(document.getElementById("quantity").textContent);
 
   const product = {
-    name: "Predator Elite FT FG Football Boots",
-    price: "279.99",
-    size: selectedSize,
+    id:    productData.id,
+    name:  productData.name,
+    price: productData.price,
+    size:  selectedSize,
     quantity: selectedQuantity,
-    image: "../assets/img/product-details/bota-adidas-predator-elite-ft-fg-black-white-red-1.webp"
+    image: "../" + productData.img
   };
 
   openCartPanel(product);
 }
+
 
 function openCartPanel(product) {
   let cart = JSON.parse(localStorage.getItem("cart")) || [];

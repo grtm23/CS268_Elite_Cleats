@@ -1,9 +1,9 @@
 -- Insert demo users (password_hash will be filled later manually)
 INSERT INTO Users (first_name, last_name, email, phone_number, address, password_hash, role)
 VALUES 
-('Admin', 'Elite', 'admin@elite.com', '1234567890', '123 Admin St, Bolivia', '', 'admin'),
-('Alex', 'Ramirez', 'alex@elite.com', '0987654321', '456 Elm St, Bolivia', '', 'customer'),
-('Jessica', 'Lopez', 'jessica@elite.com', '1122334455', '789 Oak St, Bolivia', '', 'customer');
+('Admin', 'Elite', 'admin@elite.com', '1234567890', '123 Admin St, Bolivia', '$2y$12$VRTmydZW/kus63FJoThw7Oy0.q8EFgfolM.LfKJv.KlC2u6LeVQdK', 'admin'),
+('Alex', 'Ramirez', 'alex@elite.com', '0987654321', '456 Elm St, Bolivia', '$2y$12$W5fRCO6n98ONHd9anODdWexTY8j4QkNmdtaAL/Oo9XGvy5lmXinFe', 'customer'),
+('Jessica', 'Lopez', 'jessica@elite.com', '1122334455', '789 Oak St, Bolivia', '$2y$12$dhwyB9rNwnZULaTl6g78wu2JKrdZRS5m4jHLEzu1eh8hkBX5yJSRy', 'customer');
 
 -- Insert demo product
 INSERT INTO Products (name, description, price, stock)
@@ -17,13 +17,13 @@ Includes gymsack', 219.99, 15);
 -- Insert related images for product_id = 1
 INSERT INTO Product_Images (product_id, image_url)
 VALUES
-(1, 'CS268_ELITE_CLEATS/assets/p_images/bota-nike-air-zoom-mercurial-superfly-10-elite-ag-pro-black-black-deep-jungle-0.webp'),
-(1, 'CS268_ELITE_CLEATS/assets/p_images/bota-nike-air-zoom-mercurial-superfly-10-elite-ag-pro-black-black-deep-jungle-1.webp'),
-(1, 'CS268_ELITE_CLEATS/assets/p_images/bota-nike-air-zoom-mercurial-superfly-10-elite-ag-pro-black-black-deep-jungle-2.webp'),
-(1, 'CS268_ELITE_CLEATS/assets/p_images/bota-nike-air-zoom-mercurial-superfly-10-elite-ag-pro-black-black-deep-jungle-3.webp'),
-(1, 'CS268_ELITE_CLEATS/assets/p_images/bota-nike-air-zoom-mercurial-superfly-10-elite-ag-pro-black-black-deep-jungle-4.webp'),
-(1, 'CS268_ELITE_CLEATS/assets/p_images/bota-nike-air-zoom-mercurial-superfly-10-elite-ag-pro-black-black-deep-jungle-5.webp'),
-(1, 'CS268_ELITE_CLEATS/assets/p_images/bota-nike-air-zoom-mercurial-superfly-10-elite-ag-pro-black-black-deep-jungle-6.webp');
+(1, 'assets/p_images/bota-nike-air-zoom-mercurial-superfly-10-elite-ag-pro-black-black-deep-jungle-0.webp'),
+(1, 'assets/p_images/bota-nike-air-zoom-mercurial-superfly-10-elite-ag-pro-black-black-deep-jungle-1.webp'),
+(1, 'assets/p_images/bota-nike-air-zoom-mercurial-superfly-10-elite-ag-pro-black-black-deep-jungle-2.webp'),
+(1, 'assets/p_images/bota-nike-air-zoom-mercurial-superfly-10-elite-ag-pro-black-black-deep-jungle-3.webp'),
+(1, 'assets/p_images/bota-nike-air-zoom-mercurial-superfly-10-elite-ag-pro-black-black-deep-jungle-4.webp'),
+(1, 'assets/p_images/bota-nike-air-zoom-mercurial-superfly-10-elite-ag-pro-black-black-deep-jungle-5.webp'),
+(1, 'assets/p_images/bota-nike-air-zoom-mercurial-superfly-10-elite-ag-pro-black-black-deep-jungle-6.webp');
 
 -- Insert a demo order for user_id = 2 (Alex)
 INSERT INTO Orders (user_id, total_amount, shipping_address, status)
