@@ -1,7 +1,7 @@
 <?php
-require_once 'includes/functions.php';
+require_once __DIR__ . '/includes/functions.php';
 
-// fetch 3 random featured cleats
+/* Grab three random cleats (name, price, id, first image) */
 $featured = fetchRandomProducts($conn, 3);
 ?>
 <!DOCTYPE html>
@@ -11,20 +11,22 @@ $featured = fetchRandomProducts($conn, 3);
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Elite Cleats – Home</title>
 
-  <!-- Global Styles -->
-  <link rel="stylesheet" href="assets/css/style.css" />
-  <!-- Shared Components -->
-  <link rel="stylesheet" href="assets/css/navbar.css" />
-  <link rel="stylesheet" href="assets/css/footer.css" />
-  <!-- Page-Specific Styles -->
-  <link rel="stylesheet" href="assets/css/home.css" />
+  <!-- Global / shared styles -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/navbar.css">
+  <link rel="stylesheet" href="assets/css/footer.css">
+
+  <!-- Home-page specific – contains product-card sizing too -->
+  <link rel="stylesheet" href="assets/css/home.css">
 </head>
 <body>
 
+  <!-- navbar / footer loaded by script.js -->
   <div id="navbar"></div>
 
   <main class="home-container">
-    <!-- Hero Section -->
+
+    <!-- Hero --------------------------------------------------------- -->
     <section class="hero">
       <div class="hero-overlay">
         <div class="hero-content">
@@ -35,23 +37,42 @@ $featured = fetchRandomProducts($conn, 3);
       </div>
     </section>
 
-    <!-- Featured Cleats -->
+    <!-- Featured cleats --------------------------------------------- -->
     <section class="featured">
       <h2>Featured Cleats</h2>
+
       <div class="featured-grid">
-        <?php foreach ($featured as $prod): ?>
-          <a class="featured-card" href="pages/product-details.php?id=<?= (int)$prod['product_id']; ?>">
-            <img src="<?= htmlspecialchars($prod['image_url']); ?>" alt="<?= htmlspecialchars($prod['name']); ?>">
-            <h3><?= htmlspecialchars($prod['name']); ?></h3>
-            <p>€<?= number_format($prod['price'], 2); ?></p>
+
+        <?php foreach ($featured as $p): 
+              /* pull TWO images (for hover) */
+              $imgs  = fetchFirstTwoImages($conn, (int)$p['product_id']);
+              $img1  = htmlspecialchars($imgs[0]);
+              $img2  = htmlspecialchars($imgs[1]);
+              $name  = htmlspecialchars($p['name']);
+              $price = number_format($p['price'], 2);
+              $id    = (int)$p['product_id'];          ?>
+          
+          <a href="pages/product-details.php?id=<?= $id ?>" class="product-link">
+            <div class="product-card">
+              <div class="product-image">
+                <img class="primary-img"   src="<?= $img1 ?>" alt="<?= $name ?>">
+                <img class="secondary-img" src="<?= $img2 ?>" alt="<?= $name ?> side">
+              </div>
+              <h3><?= $name ?></h3>
+              <p class="price">€<?= $price ?></p>
+            </div>
           </a>
+
         <?php endforeach; ?>
-      </div>
+
+      </div> <!-- /.featured-grid -->
     </section>
+
   </main>
 
   <div id="footer"></div>
 
+  <!-- loads navbar / footer into the page -->
   <script src="assets/js/script.js"></script>
 </body>
 </html>

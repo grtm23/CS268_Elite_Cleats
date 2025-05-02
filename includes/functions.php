@@ -237,5 +237,58 @@ function createUser(mysqli $conn, array $data)
     return $stmt->execute() ? $conn->insert_id : false;
 }
 
+/* 
+ * Return all cart rows for a user_id
+ */
+function getCartItems(mysqli $conn, int $uid): array
+{
+    $sql = "
+      SELECT c.cart_id, c.product_id, c.quantity, c.size,
+             p.name, p.price,
+             (SELECT image_url FROM Product_Images WHERE product_id = p.product_id LIMIT 1) AS image
+      FROM Cart c
+      JOIN Products p ON p.product_id = c.product_id
+      WHERE c.user_id = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param('i', $uid);
+    $stmt->execute();
+    return $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+}
+
+/* Insert / update one cart item */
+function upsertCartItem(mysqli $conn, int $uid, array $item)
+{
+    $stmt = $conn->prepare("
+      INSERT INTO Cart (user_id, product_id, quantity, size)
+      VALUES (?,?,?,?)
+      ON DUPLICATE KEY UPDATE quantity = VALUES(quantity)
+    ");
+    $stmt->bind_param('iiis', $uid, $item['product_id'], $item['quantity'], $item['size']);
+    return $stmt->execute();
+}
+
+/* Delete one cart item */
+function deleteCartItem(mysqli $conn, int $uid, int $pid, string $size)
+{
+    $stmt = $conn->prepare("DELETE FROM Cart WHERE user_id=? AND product_id=? AND size=?");
+    $stmt->bind_param('iis', $uid, $pid, $size);
+    return $stmt->execute();
+}
+/* fetch user info for checkout autofill  */
+function getUserInfo(mysqli $conn, int $uid): ?array {
+    $stmt = $conn->prepare("SELECT first_name, last_name, email, address FROM Users WHERE user_id=?");
+    $stmt->bind_param('i', $uid);
+    $stmt->execute();
+    return $stmt->get_result()->fetch_assoc();
+}
+
+/* compute cart total for a user  */
+function cartTotals(mysqli $conn, int $uid): array {
+    $items = getCartItems($conn, $uid);
+    $sum = 0;
+    foreach ($items as $it) $sum += $it['price'] * $it['quantity'];
+    return ['items'=>$items, 'subtotal'=>$sum];
+}
+
 ?>
 

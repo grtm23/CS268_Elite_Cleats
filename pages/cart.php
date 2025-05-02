@@ -1,8 +1,9 @@
+<?php if (session_status()===PHP_SESSION_NONE) session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Cart – Elite Cleats</title>
+  <meta charset="UTF-8">
+  <title>Cart – Elite Cleats</title>
 
     <!-- Global Styles -->
     <link rel="stylesheet" href="../assets/css/style.css">
@@ -42,7 +43,7 @@
             <span>Total:</span>
             <span id="summary-total">— €</span>
         </div>
-        <a href="checkout.html" class="pay-btn">Pay now</a>
+        <a href="checkout.php" class="pay-btn">Pay now</a>
         </aside>
     </main>
 

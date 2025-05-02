@@ -1,4 +1,11 @@
 <?php
+
+/*
+users for the passwords
+-admin@elite.com                 
+-alex@elite.com                   
+-jessica@elite.com  
+*/
 $passwords = [
     'admin123',
     'test123',
